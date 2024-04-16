@@ -1,0 +1,20 @@
+
+@font-face {
+    font-family: 'Rockly';
+    src: url('/assets/font/Rockly.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'RoyalAcid';
+    src: url('/assets/font/Royalacid.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'DoctorPunk';
+    src: url('/assets/font/DoctorPunk.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Truckin';
+    src: url('/assets/font/KeeponTruckin.ttf') format('truetype');
+}

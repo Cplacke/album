@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Visual Studio Records</title>
+        <link rel="stylesheet" href="/assets/style/fonts.css">
+        <link rel="stylesheet" href="/assets/style/main.css">
+        <script>
+            window.onload = () => {
+                console.info('script');
+                document.querySelector('#search').addEventListener("change", (change) => {
+                    window.location.href = `/?search=${change.target.value}`;
+                });
+            }
+        </script>
+    </head>
+    <body>
+
+        <header>
+            <h1>Visual Studio Records</h1>
+        </header>
+
+        <div class="container">
+            <div style="margin: auto; display: flex; font-size: x-large;">
+                <div style="font-family: 'Truckin'; margin-right: 10px;">Search</div>
+                <input id="search" type="text" placeholder="Search Artist"
+                    style="font-size: large; width: 100%; border-radius: 20px; border: none; padding: 0 10px;"
+                />
+            </div>
+        </div>
+
+        <div class="container">
+            {products}
+            <!-- Add more product entries as needed -->
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Visual Studio Records ®</p>
+        </footer>
+
+    </body>
+</html>

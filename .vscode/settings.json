@@ -1,0 +1,39 @@
+{
+    "deno.enable": true,
+    "deno.path": "/opt/homebrew/bin//deno",
+    "editor.tokenColorCustomizations": {
+        // "comments": "",
+        // "strings": "#114b63",
+        // "types": "#00ff00",
+        // "keyword.control": "#db8a8d"
+        // "keywords": "#ff0000",
+        // "variables": "#FF0000",
+        // "functions": "#FF0000",
+        // "numbers": "#FF0000",
+    },
+    "editor.semanticTokenColorCustomizations": {
+        "enabled": true,
+        "rules": {
+            // "namespace": "#f1eae1","
+            // "type": "#f1eae1",
+            // "type.defaultLibrary": "#e2a34b",
+            // "struct": "#c0485d",
+            // "class": "#0898d0",
+            // "class.defaultLibrary": "#f0dc6f",
+            // "interface": "#db8a8d",
+            // "enum": "#cd5b5f",
+            // "function": "#f0dc6f",
+            // "function.defaultLibrary": "#59b7bc",
+            // "method": "#cc741c",
+            // "macro": "#0f0",
+            // "variable": "#cd5b5f",
+            // "variable.readonly": "#e2a34b",
+            // "variable.readonly.defaultLibrary": "#c0485d",
+            // "parameter": "#0898d0",
+            // "property": "#cd5b5f",
+            // "property.readonly": "#db8a8d",
+            "enumMember": "#cd5b5f",
+            // "event": "#59b7bc",
+        }
+    }
+}
