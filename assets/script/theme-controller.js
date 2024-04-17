@@ -34,7 +34,7 @@ const updateStyle = (themeClass, hex) => {
 
 const rgbToHex = (rgb) => {
     const componentToHex = (c) => {
-        const hex = c.toString(16);
+        const hex = Number(c).toString(16)
         return hex.length == 1 ? "0" + hex : hex;
     }
     const values = /rgb\((\d+), ?(\d+), ?(\d+)\)/.exec(rgb)
