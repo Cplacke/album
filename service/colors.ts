@@ -1,11 +1,12 @@
 import getColors from 'npm:get-image-colors';
-import { closest } from 'npm:color-2-name';
+import { SimplifiedAlbum } from "https://github.com/hum/spotify/raw/main/mod.ts";
+import { closest, isDark } from 'npm:color-2-name';
 import { themeEditor } from '../src/theme/theme.ts'
 
 
-export const getColorPalletHtml = async (imgUrl: string) => {
+export const getColorPalletHtml = async (album: SimplifiedAlbum) => {
+    const imgUrl = album.images[0].url;
     const colors: any[] = await getColors(imgUrl, { count: 12 });
-    const themeCount = Array.from({ length: 21 }, (_, index) => index);
     const html = `
         <!DOCTYPE html>
         <html style="overflow: scroll">
@@ -27,6 +28,7 @@ export const getColorPalletHtml = async (imgUrl: string) => {
                             colors.map((c) => ({
                                 hex: c.hex(),
                                 name: closest(c.hex()).name,
+                                isDark: isDark(c.hex()),
                             }))
                         )
                     };
@@ -38,6 +40,7 @@ export const getColorPalletHtml = async (imgUrl: string) => {
             </header>
             <body class="pb-5">
                 <img src="${imgUrl}" style="display: block; margin: 0 auto 25px auto; height: 200px">
+                <h1>${album.name} - ${album.artists[0].name}</h1>
                 <div style="display: flex; flex: flex-wrap; align-items: center;">
                     <div style="width: 50%">
                         ${ themeEditor(colors) }
@@ -52,12 +55,4 @@ export const getColorPalletHtml = async (imgUrl: string) => {
         </html>
     `
     return html;
-}
-
-export const test = async () => {
-    const url = 'https://static.spin.com/files/2003/07/BlackSabbath-1578347766.jpg';
-    const html = await getColorPalletHtml(url);
-    const encoder = new TextEncoder();
-    await Deno.writeFile('./sample.html', encoder.encode(html));
-    console.info('./sample.html test file written');
 }

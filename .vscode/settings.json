@@ -10,6 +10,27 @@
         // "variables": "#FF0000",
         // "functions": "#FF0000",
         // "numbers": "#FF0000",
+        "textMateRules": [
+            {
+                "name": "keyword.operator",
+                "scope": [
+                    "keyword.operator",
+                ],
+                "settings": {
+                    "foreground": "#00ff00"
+                }
+            },{
+                "name": "keyword.control",
+                "scope": [
+                    "keyword.control.conditional",
+                    "keyword.control.loop"
+                ],
+                "settings": {
+                    "foreground": "#00ff00"
+                }
+            }
+        ]
+        
     },
     "editor.semanticTokenColorCustomizations": {
         "enabled": true,
@@ -30,7 +51,7 @@
             // "variable.readonly": "#e2a34b",
             // "variable.readonly.defaultLibrary": "#c0485d",
             // "parameter": "#0898d0",
-            // "property": "#cd5b5f",
+            "operator": "#cd5b5f",
             // "property.readonly": "#db8a8d",
             "enumMember": "#cd5b5f",
             // "event": "#59b7bc",

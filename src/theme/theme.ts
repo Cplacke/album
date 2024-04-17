@@ -42,7 +42,6 @@ const themeElements = [
     // { type: 'Parameters', class: '', color: '' },
 ]
 
-
 export const themeEditor = (colors: any[]) => {
     return `
         <div class="mb-2">

@@ -1,5 +1,5 @@
 import { getProducts } from './product.ts';
-import { spotify } from '../service/spotfiy.ts';
+import { spotify } from "../service/spotfiy.ts";
 import { getColorPalletHtml } from '../service/colors.ts';
 
 import { getHeaders } from './util.ts'
@@ -37,7 +37,7 @@ export const router = async (req: Request) => {
         } else {
             url.pathname += '.html';
             const album = await spotify.getAlbumById({ id: albumId[1] });
-            body = await getColorPalletHtml(album.images[0].url);
+            body = await getColorPalletHtml(album);
             statusCode = 200;
         }
     }

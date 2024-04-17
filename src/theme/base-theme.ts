@@ -8,30 +8,24 @@ export const baseThemeSetting = {
         "variables": "",
         "functions": "",
         "numbers": "",
-    },
-    "editor.semanticTokenColorCustomizations": {
-        "enabled": true,
-        "rules": {
-            "namespace": "",
-            "type": "",
-            "type.defaultLibrary": "",
-            "struct": "",
-            "class": "",
-            "class.defaultLibrary": "",
-            "interface": "",
-            "enum": "",
-            "function": "",
-            "function.defaultLibrary": "",
-            "method": "",
-            "macro": "#0f0",
-            "variable": "",
-            "variable.readonly": "",
-            "variable.readonly.defaultLibrary": "",
-            "parameter": "",
-            "property": "",
-            "property.readonly": "",
-            "enumMember": "",
-            "event": "",
-        }
+        "textMateRules": [
+            {
+                "name": "keyword.operator",
+                "scope": [
+                    "keyword.operator",
+                ],
+                "settings": {
+                    "foreground": ""
+                }
+            },{
+                "name": "keyword.control",
+                "scope": [
+                    "keyword.control",
+                ],
+                "settings": {
+                    "foreground": ""
+                }
+            }
+        ]
     }
 }
