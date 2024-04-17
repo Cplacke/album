@@ -2,59 +2,88 @@
     "deno.enable": true,
     "deno.path": "/opt/homebrew/bin//deno",
     "editor.tokenColorCustomizations": {
-        // "comments": "",
-        // "strings": "#114b63",
-        // "types": "#00ff00",
-        // "keyword.control": "#db8a8d"
-        // "keywords": "#ff0000",
-        // "variables": "#FF0000",
-        // "functions": "#FF0000",
-        // "numbers": "#FF0000",
+        "comments": "rgb(213, 202, 133)",
+        "strings": "rgb(174, 139, 138)",
+        "types": "rgb(147, 77, 87)",
+        "keywords": "rgb(201, 106, 172)",
+        "variables": "rgb(176, 193, 187)",
+        "functions": "rgb(117, 160, 171)",
+        "numbers": "rgb(64, 179, 206)",
         "textMateRules": [
             {
                 "name": "keyword.operator",
                 "scope": [
-                    "keyword.operator",
+                    "keyword.operator"
                 ],
                 "settings": {
-                    "foreground": "#00ff00"
+                    "foreground": "rgb(176, 193, 187)"
                 }
-            },{
+                },
+                {
                 "name": "keyword.control",
                 "scope": [
-                    "keyword.control.conditional",
-                    "keyword.control.loop"
+                    "keyword.control"
                 ],
                 "settings": {
-                    "foreground": "#00ff00"
+                    "foreground": "rgb(147, 77, 87)"
                 }
             }
-        ]
-        
-    },
-    "editor.semanticTokenColorCustomizations": {
-        "enabled": true,
-        "rules": {
-            // "namespace": "#f1eae1","
-            // "type": "#f1eae1",
-            // "type.defaultLibrary": "#e2a34b",
-            // "struct": "#c0485d",
-            // "class": "#0898d0",
-            // "class.defaultLibrary": "#f0dc6f",
-            // "interface": "#db8a8d",
-            // "enum": "#cd5b5f",
-            // "function": "#f0dc6f",
-            // "function.defaultLibrary": "#59b7bc",
-            // "method": "#cc741c",
-            // "macro": "#0f0",
-            // "variable": "#cd5b5f",
-            // "variable.readonly": "#e2a34b",
-            // "variable.readonly.defaultLibrary": "#c0485d",
-            // "parameter": "#0898d0",
-            "operator": "#cd5b5f",
-            // "property.readonly": "#db8a8d",
-            "enumMember": "#cd5b5f",
-            // "event": "#59b7bc",
-        }
+          ]
     }
+    // "editor.tokenColorCustomizations": {
+    //     // "comments": "",
+    //     // "strings": "#114b63",
+    //     // "types": "#00ff00",
+    //     // "keyword.control": "#db8a8d"
+    //     // "keywords": "#ff0000",
+    //     // "variables": "#FF0000",
+    //     // "functions": "#FF0000",
+    //     // "numbers": "#FF0000",
+    //     "textMateRules": [
+    //         {
+    //             "name": "keyword.operator",
+    //             "scope": [
+    //                 "keyword.operator",
+    //             ],
+    //             "settings": {
+    //                 "foreground": "#00ff00"
+    //             }
+    //         },{
+    //             "name": "keyword.control",
+    //             "scope": [
+    //                 "keyword.control.conditional",
+    //                 "keyword.control.loop"
+    //             ],
+    //             "settings": {
+    //                 "foreground": "#00ff00"
+    //             }
+    //         }
+    //     ]
+        
+    // },
+    // "editor.semanticTokenColorCustomizations": {
+    //     "enabled": true,
+    //     "rules": {
+    //         // "namespace": "#f1eae1","
+    //         // "type": "#f1eae1",
+    //         // "type.defaultLibrary": "#e2a34b",
+    //         // "struct": "#c0485d",
+    //         // "class": "#0898d0",
+    //         // "class.defaultLibrary": "#f0dc6f",
+    //         // "interface": "#db8a8d",
+    //         // "enum": "#cd5b5f",
+    //         // "function": "#f0dc6f",
+    //         // "function.defaultLibrary": "#59b7bc",
+    //         // "method": "#cc741c",
+    //         // "macro": "#0f0",
+    //         // "variable": "#cd5b5f",
+    //         // "variable.readonly": "#e2a34b",
+    //         // "variable.readonly.defaultLibrary": "#c0485d",
+    //         // "parameter": "#0898d0",
+    //         "operator": "#cd5b5f",
+    //         // "property.readonly": "#db8a8d",
+    //         "enumMember": "#cd5b5f",
+    //         // "event": "#59b7bc",
+    //     }
+    // }
 }

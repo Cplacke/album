@@ -32,32 +32,33 @@ const updateStyle = (themeClass, hex) => {
     document.querySelector('#dynamicStyle').innerHTML = newStyle;
 } 
 
+const rgbToHex = (rgb) => {
+    const values = /rgb\((\d+), ?(\d+), ?(\d+)\)/.exec(rgb)
+    return "#" + ((1 << 24) + (values[1] << 16) + (values[2] << 8) + values[3]).toString(16).slice(1);
+}
+
 const exportTheme = () => {
     const baseThemeSetting = {
         "editor.tokenColorCustomizations": {
-            "comments": document.querySelector(`#select-______comments`).style.backgroundColor,
-            "strings": document.querySelector(`#select-mtk12`).style.backgroundColor,
-            "types": document.querySelector(`#select-______types`).style.backgroundColor,
-            "keywords": document.querySelector(`#select-mtk6`).style.backgroundColor,
-            "variables": document.querySelector(`#select-mtk10`).style.backgroundColor,
-            "functions": document.querySelector(`#select-mtk16`).style.backgroundColor,
-            "numbers": document.querySelector(`#select-mtk7`).style.backgroundColor,
+            "comments": rgbToHex(document.querySelector(`#select-______comments`).style.backgroundColor),
+            "strings": rgbToHex(document.querySelector(`#select-mtk12`).style.backgroundColor),
+            "types": rgbToHex(document.querySelector(`#select-______types`).style.backgroundColor),
+            "keywords": rgbToHex(document.querySelector(`#select-mtk6`).style.backgroundColor),
+            "variables": rgbToHex(document.querySelector(`#select-mtk10`).style.backgroundColor),
+            "functions": rgbToHex(document.querySelector(`#select-mtk16`).style.backgroundColor),
+            "numbers": rgbToHex(document.querySelector(`#select-mtk7`).style.backgroundColor),
             "textMateRules": [
                 {
                     "name": "keyword.operator",
-                    "scope": [
-                        "keyword.operator",
-                    ],
+                    "scope": [ "keyword.operator" ],
                     "settings": {
-                        "foreground": document.querySelector(`#select-mtk3`).style.backgroundColor
+                        "foreground": rgbToHex(document.querySelector(`#select-mtk3`).style.backgroundColor)
                     }
                 },{
                     "name": "keyword.control",
-                    "scope": [
-                        "keyword.control",
-                    ],
+                    "scope": [ "keyword.control" ],
                     "settings": {
-                        "foreground": document.querySelector(`#select-mtk18`).style.backgroundColor
+                        "foreground": rgbToHex(document.querySelector(`#select-mtk18`).style.backgroundColor)
                     }
                 }
             ]
