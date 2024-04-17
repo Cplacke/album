@@ -33,8 +33,12 @@ const updateStyle = (themeClass, hex) => {
 } 
 
 const rgbToHex = (rgb) => {
+    const componentToHex = (c) => {
+        const hex = c.toString(16);
+        return hex.length == 1 ? "0" + hex : hex;
+    }
     const values = /rgb\((\d+), ?(\d+), ?(\d+)\)/.exec(rgb)
-    return "#" + ((1 << 24) + (values[1] << 16) + (values[2] << 8) + values[3]).toString(16).slice(1);
+    return "#" + componentToHex(values[1]) + componentToHex(values[2]) + componentToHex(values[3]);
 }
 
 const exportTheme = () => {
