@@ -2,10 +2,11 @@ import getColors from 'npm:get-image-colors';
 import { SimplifiedAlbum } from "https://github.com/hum/spotify/raw/main/mod.ts";
 import { closest, isDark } from 'npm:color-2-name@1.3.0';
 import { themeEditor } from '../src/theme/theme.ts'
+import copy from 'npm:copy-to-clipboard';
 
 export const getColorPalletHtml = async (album: SimplifiedAlbum) => {
     const imgUrl = album.images[0].url;
-    const colors: any[] = await getColors(imgUrl, { count: 12 });
+    const colors: any[] = await getColors(imgUrl, { count: 16 });
     const html = `
         <!DOCTYPE html>
         <html style="overflow: scroll">
@@ -31,6 +32,7 @@ export const getColorPalletHtml = async (album: SimplifiedAlbum) => {
                             }))
                         )
                     };
+                    const copy = ${copy};
                 </script>
                 <script src="/assets/script/theme-controller.js"></script>
             </head>
@@ -63,10 +65,14 @@ export const getColorPalletHtml = async (album: SimplifiedAlbum) => {
                                     <code>'/.vscode/settings.json'</code> file in your 
                                     VS Code editor and Happy Hacking!
                                 </h4>
-                                <textarea rows=30 class="w-100 text-mono"></textarea>
+                                <textarea id="themeTextArea" rows=30 class="w-100 text-mono"></textarea>
                             </div>
                             <div class="modal-footer border-0">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                    onclick="navigator.clipboard.writeText(
+                                        document.querySelector('#themeTextArea').value
+                                    )"
+                                >Copy to Clipboard</button>
                             </div>
                         </div>
                     </div>

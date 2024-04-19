@@ -36,7 +36,7 @@ export const router = async (req: Request) => {
             statusCode = 400;
         } else {
             url.pathname += '.html';
-            const album = await spotify.getAlbumById({ id: albumId[1] });
+            const album = await spotify.getAlbumById({ id: albumId[1] });     
             body = await getColorPalletHtml(album);
             statusCode = 200;
         }
