@@ -3,7 +3,6 @@ import { SimplifiedAlbum } from "https://github.com/hum/spotify/raw/main/mod.ts"
 import { closest, isDark } from 'npm:color-2-name';
 import { themeEditor } from '../src/theme/theme.ts'
 
-
 export const getColorPalletHtml = async (album: SimplifiedAlbum) => {
     const imgUrl = album.images[0].url;
     const colors: any[] = await getColors(imgUrl, { count: 12 });
