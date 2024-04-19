@@ -1,89 +1,186 @@
 {
     "deno.enable": true,
     "deno.path": "/opt/homebrew/bin//deno",
-    "editor.tokenColorCustomizations": {
-        "comments": "rgb(213, 202, 133)",
-        "strings": "rgb(174, 139, 138)",
-        "types": "rgb(147, 77, 87)",
-        "keywords": "rgb(201, 106, 172)",
-        "variables": "rgb(176, 193, 187)",
-        "functions": "rgb(117, 160, 171)",
-        "numbers": "rgb(64, 179, 206)",
-        "textMateRules": [
-            {
-                "name": "keyword.operator",
-                "scope": [
-                    "keyword.operator"
-                ],
-                "settings": {
-                    "foreground": "rgb(176, 193, 187)"
-                }
-                },
-                {
-                "name": "keyword.control",
-                "scope": [
-                    "keyword.control"
-                ],
-                "settings": {
-                    "foreground": "rgb(147, 77, 87)"
-                }
-            }
-          ]
-    }
+    "editor.fontFamily": "Pixel Operator Mono",
+    "editor.fontSize": 18,
+    "editor.lineHeight": 18,
+      // "editor.tokenColorCustomizations": {
+      //   "comments": "#3d3a39",
+      //   "strings": "#747c79",
+      //   "types": "#ba8496",
+      //   "keywords": "#805966",
+      //   "functions": "#9e9e9e",
+      //   "numbers": "#805966",
+      //   "textMateRules": [
+      //     {
+      //       "name": "keyword.operators",
+      //       "scope": [
+      //         "keyword.operator",
+      //         "storage.type.function.arrow.ts",
+      //         "storage.type.function.arrow.js",
+      //         "storage.modifier.async.ts",
+      //         "storage.modifier.async.js",
+      //         "meta.arrow.ts",
+      //         "meta.arrow.js",
+      //         "meta.embedded.line.ts",
+      //         "meta.embedded.line.js",
+      //         "keyword.operator.new.ts",
+      //         "keyword.operator.new.js",
+      //         "entity.other.attribute-name.pseudo-class.css",
+      //         "entity.other.attribute-name.pseudo-element.css",
+      //         "punctuation.definition.template-expression.begin.ts",
+      //         "punctuation.definition.template-expression.begin.js",
+      //         "punctuation.definition.template-expression.end.ts",
+      //         "punctuation.definition.template-expression.end.js",
+      //         "support.variable",
+      //       ],
+      //       "settings": {
+      //         "foreground": "#eeebec"
+      //       }
+      //     },
+      //     {
+      //       "name": "meta.definition.variable",
+      //       "scope": [
+      //         "meta.definition.variable.ts",
+      //         "meta.definition.variable.js",
+      //         "variable.other.constant.ts",
+      //         "variable.other.constant.js",
+      //         "variable.other.constant.object.ts",
+      //         "variable.other.constant.object.js",
+      //         "variable.other.constant.property.ts",
+      //         "variable.other.constant.property.js",
+      //         "variable.other.readwrite.alias.ts",
+      //         "variable.other.readwrite.alias.js",
+      //         "variable.other.object.property.ts",
+      //         "variable.other.object.property.js",
+      //         "support.constant.font-name.css",
+      //         "constant.other.color.rgb-value.hex.css",
+      //         "support.constant.property-value.css",
+      //         "string.quoted.double.css",
+      //         "string.quoted.single.css",
+      //         "support.constant.color.w3c-extended-color-name.css",
+      //       ],
+      //       "settings": {
+      //         "foreground": "#737374"
+      //       }
+      //     },
+      //     {
+      //       "name": "variable.other.object",
+      //       "scope": [
+      //         "variable.other.object.ts",
+      //         "variable.other.object.js",
+      //         "variable.other.property.ts",
+      //         "variable.other.property.js",
+      //         "variable.other.readwrite.ts",
+      //         "variable.other.readwrite.js",
+      //         "support.variable.property.ts",
+      //         "support.variable.property.js",
+      //         "variable.parameter",
+      //         "entity.other.attribute-name",
+      //         "support.type.property-name.css",
+      //         "support.type.property-name.json.comments"
+      //       ],
+      //       "settings": {
+      //         "foreground": "#efaec2"
+      //       }
+      //     },
+      //     {
+      //       "name": "keyword.control",
+      //       "scope": [
+      //         "keyword.control",
+      //         "meta.selector.css",
+      //         "entity.other.attribute-name.class.css",
+      //         "entity.name.tag.css",
+      //         "entity.name.tag.html",
+      //       ],
+      //       "settings": {
+      //         "foreground": "#ba8496"
+      //       }
+      //     }
+      //   ]
+      // },
+      // "editor.semanticTokenColorCustomizations": {
+      //   "enabled": true,
+      //   "rules": {
+      //     "namespace": "#ba8496",
+      //     "variable.declaration": "#737374",
+      //     "function": "#9e9e9e"
+      //   }
+      // }
+
+
+  
+
     // "editor.tokenColorCustomizations": {
-    //     // "comments": "",
-    //     // "strings": "#114b63",
-    //     // "types": "#00ff00",
-    //     // "keyword.control": "#db8a8d"
-    //     // "keywords": "#ff0000",
-    //     // "variables": "#FF0000",
-    //     // "functions": "#FF0000",
-    //     // "numbers": "#FF0000",
+    //     "comments": "#68695f",
+    //     "strings": "#ae8b8a",
+    //     "types": "#934d57",
+    //     "keywords": "#d5ca85",
+    //     "functions": "#b0c1bb",
+    //     "numbers": "#bdc2be",
     //     "textMateRules": [
     //         {
-    //             "name": "keyword.operator",
+    //             "name": "keyword.operators",
     //             "scope": [
     //                 "keyword.operator",
+    //                 "storage.type.function.arrow.ts",
+    //                 "storage.type.function.arrow.js",
+    //                 "meta.arrow.ts",
+    //                 "meta.embedded.line.ts",
+    //                 "entity.other.attribute-name.pseudo-class.css",
+    //                 "entity.other.attribute-name.pseudo-element.css"
     //             ],
     //             "settings": {
-    //                 "foreground": "#00ff00"
+    //                 "foreground": "#934d57"
+    //             }
+    //         },{
+    //             "name": "meta.definition.variable",
+    //             "scope": [
+    //                 "meta.definition.variable.js",
+    //                 "meta.definition.variable",
+    //                 "meta.definition",
+    //                 "support.constant.font-name.css",
+    //                 "constant.other.color.rgb-value.hex.css",
+    //                 "support.constant.property-value.css",
+    //                 "string.quoted.double.css",
+    //                 "string.quoted.single.css",
+    //                 "support.constant.color.w3c-extended-color-name.css"
+    //             ],
+    //             "settings": {
+    //                 "foreground": "#c96aac"
+    //             }
+    //         },{
+    //             "name": "variable.other.object",
+    //             "scope": [
+    //                 "variable.other.object",
+    //                 "variable.other.property",
+    //                 "variable.parameter",  
+    //                 "entity.other.attribute-name",
+    //                 "support.type.property-name.css"
+    //             ],
+    //             "settings": {
+    //                 "foreground": "#40b3ce"
     //             }
     //         },{
     //             "name": "keyword.control",
     //             "scope": [
-    //                 "keyword.control.conditional",
-    //                 "keyword.control.loop"
+    //                 "keyword.control",
+    //                 "meta.selector.css",
+    //                 "entity.other.attribute-name.class.css",
+    //                 "entity.name.tag.css",
     //             ],
     //             "settings": {
-    //                 "foreground": "#00ff00"
+    //                 "foreground": "#75a0ab"
     //             }
     //         }
     //     ]
-        
     // },
     // "editor.semanticTokenColorCustomizations": {
     //     "enabled": true,
     //     "rules": {
-    //         // "namespace": "#f1eae1","
-    //         // "type": "#f1eae1",
-    //         // "type.defaultLibrary": "#e2a34b",
-    //         // "struct": "#c0485d",
-    //         // "class": "#0898d0",
-    //         // "class.defaultLibrary": "#f0dc6f",
-    //         // "interface": "#db8a8d",
-    //         // "enum": "#cd5b5f",
-    //         // "function": "#f0dc6f",
-    //         // "function.defaultLibrary": "#59b7bc",
-    //         // "method": "#cc741c",
-    //         // "macro": "#0f0",
-    //         // "variable": "#cd5b5f",
-    //         // "variable.readonly": "#e2a34b",
-    //         // "variable.readonly.defaultLibrary": "#c0485d",
-    //         // "parameter": "#0898d0",
-    //         "operator": "#cd5b5f",
-    //         // "property.readonly": "#db8a8d",
-    //         "enumMember": "#cd5b5f",
-    //         // "event": "#59b7bc",
+    //         "namespace": "#d5ca85",
+    //         "variable.declaration": "#c96aac",
+    //         "function": "#b0c1bb",
     //     }
     // }
 }

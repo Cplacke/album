@@ -40,7 +40,7 @@ export const getColorPalletHtml = async (album: SimplifiedAlbum) => {
             </header>
             <body class="pb-5">
                 <img src="${imgUrl}" style="display: block; margin: 0 auto 25px auto; height: 200px">
-                <h1>${album.name} - ${album.artists[0].name}</h1>
+                <h3 class="text-center mb-4">${album.name} - ${album.artists[0].name}</h3>
                 <div style="display: flex; flex: flex-wrap; align-items: center;">
                     <div style="width: 50%">
                         ${ themeEditor(colors) }
@@ -49,6 +49,27 @@ export const getColorPalletHtml = async (album: SimplifiedAlbum) => {
                         ${
                             await Deno.readTextFile('./assets/code.html')
                         }
+                    </div>
+                </div>
+
+                <div class="modal fade" id="themeModal" tabindex="-1" role="dialog" aria-labelledby="themeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content bg-dark">
+                            <div class="modal-header border-secondary">
+                                <h3 class="modal-title text-center" id="themeModalLabel">Here is your Theme Configuration!</h3>
+                            </div>
+                            <div class="modal-body">
+                                <h4> 
+                                    Just paste the following code snippet into your 
+                                    <code>'/.vscode/settings.json'</code> file in your 
+                                    VS Code editor and Happy Hacking!
+                                </h4>
+                                <textarea rows=30 class="w-100 text-mono"></textarea>
+                            </div>
+                            <div class="modal-footer border-0">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </body>

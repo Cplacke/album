@@ -1,16 +1,31 @@
 
-const classes = [
-    'mtk12', 'mtk6', 'mtk10', 'mtk19', 'mtk16', 'mtk7', 'mtk18', 'mtk3',
-]
+const themeElements = [
+    { type: 'Strings', color: '', class: 'mtk12' },
+    { type: 'Types', color: '', class: '______types' }, // NEED TO FIND CLASS AND ADD TO DEMO
+    { type: 'Keywords', color: '', class: 'mtk6' },
+    { type: 'Variables', color: '', class: 'mtk10' },
+    { type: 'Declerations', color: '', class: 'mtk19' },
+    { type: 'Functions', color: '', class: 'mtk16' },
+    { type: 'Numbers', color: '', class: 'mtk7' },
+    { type: 'if/else/return', color: '', class: 'mtk18' },
+    { type: 'Comments', color: '', class: '______comments' }, // NEED TO FIND CLASS AND ADD TO DEMO
+    { type: 'Properties', color: '', class: '______properties' }, // NEED TO FIND CLASS AND ADD TO DEMO
+    { type: 'Operators', color: '', class: 'mtk3' },
+    // { type: 'Readonly Variables', class: '', color: '' },
+    // { type: 'Namespace', class: '', color: '' },
+    // { type: 'Classes', class: '', color: '' },
+    // { type: 'Interfaces', class: '', color: '' },
+    // { type: 'Parameters', class: '', color: '' },
+];
 
 const shuffleColors = () => {
-    const dynamicStyle = classes.map((themeClass, i) => {
+    const dynamicStyle = themeElements.map((ele, i) => {
         const randomIndex = Math.abs(Math.round(Math.random()*COLORS.length-1));
         const color = COLORS[randomIndex].hex;
 
-        document.querySelector(`#select-${themeClass}`).style.backgroundColor = color;
-        document.querySelector(`#select-${themeClass}`).style.color = COLORS[randomIndex].isDark ? '#fff' : '#000';
-        return `.${themeClass} { color: ${color} }`;
+        document.querySelector(`#select-${ele.class}`).style.backgroundColor = color;
+        document.querySelector(`#select-${ele.class}`).style.color = COLORS[randomIndex].isDark ? '#fff' : '#000';
+        return `.${ele.class} { color: ${color} }`;
     })
 
     document.querySelector('#dynamicStyle').innerHTML = dynamicStyle.join('\n');
@@ -41,35 +56,111 @@ const rgbToHex = (rgb) => {
     return "#" + componentToHex(values[1]) + componentToHex(values[2]) + componentToHex(values[3]);
 }
 
+const getThemeClassColor = (type) => {
+    const match = themeElements.find((e) => (e.type == type));
+    if(!match) {
+        console.error(type, 'Not Found!');
+        return
+    }
+    return rgbToHex(document.querySelector(`#select-${match.class}`).style.backgroundColor);
+}
+
 const exportTheme = () => {
-    const baseThemeSetting = {
+    const selections = {
+        'Strings': getThemeClassColor('Strings'),
+        'Types': getThemeClassColor('Types'),
+        'Keywords': getThemeClassColor('Keywords'),
+        'Variables': getThemeClassColor('Variables'),
+        'Declerations': getThemeClassColor('Declerations'),
+        'Functions': getThemeClassColor('Functions'),
+        'Numbers': getThemeClassColor('Numbers'),
+        'if/else/return': getThemeClassColor('if/else/return'),
+        'Comments': getThemeClassColor('Comments'),
+        'Properties': getThemeClassColor('Properties'),
+        'Operators': getThemeClassColor('Operators'),
+    }
+
+    const baseThemeSetting = {  
         "editor.tokenColorCustomizations": {
-            "comments": rgbToHex(document.querySelector(`#select-______comments`).style.backgroundColor),
-            "strings": rgbToHex(document.querySelector(`#select-mtk12`).style.backgroundColor),
-            "types": rgbToHex(document.querySelector(`#select-______types`).style.backgroundColor),
-            "keywords": rgbToHex(document.querySelector(`#select-mtk6`).style.backgroundColor),
-            "variables": rgbToHex(document.querySelector(`#select-mtk10`).style.backgroundColor),
-            "functions": rgbToHex(document.querySelector(`#select-mtk16`).style.backgroundColor),
-            "numbers": rgbToHex(document.querySelector(`#select-mtk7`).style.backgroundColor),
+            "comments": selections.Comments,
+            "strings": selections.Strings,
+            "types": selections.Types,
+            "keywords": selections.Keywords,
+            "functions": selections.Functions,
+            "numbers": selections.Numbers,
             "textMateRules": [
                 {
-                    "name": "keyword.operator",
-                    "scope": [ "keyword.operator" ],
+                    "name": "keyword.operators",
+                    "scope": [
+                        "keyword.operator",
+                        "storage.type.function.arrow.ts",
+                        "meta.arrow.ts",
+                        "meta.embedded.line.ts",
+                        "entity.other.attribute-name.pseudo-class.css",
+                        "entity.other.attribute-name.pseudo-element.css"
+                    ],
                     "settings": {
-                        "foreground": rgbToHex(document.querySelector(`#select-mtk3`).style.backgroundColor)
+                        "foreground": selections.Operators
+                    }
+                },{
+                    "name": "meta.definition.variable",
+                    "scope": [
+                        "meta.definition.variable.js",
+                        "meta.definition.variable",
+                        "meta.definition",
+                        "support.constant.font-name.css",
+                        "constant.other.color.rgb-value.hex.css",
+                        "support.constant.property-value.css",
+                        "string.quoted.double.css",
+                        "string.quoted.single.css",
+                        "support.constant.color.w3c-extended-color-name.css"
+                    ],
+                    "settings": {
+                        "foreground": selections.Declerations,
+                    }
+                },{
+                    "name": "variable.other.object",
+                    "scope": [
+                        "variable.other.object",
+                        "variable.other.property",
+                        "variable.parameter",  
+                        "entity.other.attribute-name",
+                        "support.type.property-name.css"
+                    ],
+                    "settings": {
+                        "foreground": selections.Variables,
                     }
                 },{
                     "name": "keyword.control",
-                    "scope": [ "keyword.control" ],
+                    "scope": [
+                        "keyword.control",
+                        "meta.selector.css",
+                        "entity.other.attribute-name.class.css",
+                        "entity.name.tag.css",
+                    ],
                     "settings": {
-                        "foreground": rgbToHex(document.querySelector(`#select-mtk18`).style.backgroundColor)
+                        "foreground": selections["if/else/return"]
                     }
                 }
             ]
+        },
+        "editor.semanticTokenColorCustomizations": {
+            "enabled": true,
+            "rules": {
+                "namespace": selections.Types,
+                "variable.declaration":  selections.Declerations,
+                "function":  selections.Functions,
+            }
         }
     };
 
     console.info('THEME', baseThemeSetting);
+    const jsonContent = JSON.stringify(baseThemeSetting, null, 2);
+
+    document.querySelector('#themeModal .modal-body textarea').style.color = 
+        getThemeClassColor('Strings');
+    document.querySelector('#themeModal .modal-body textarea').value = 
+        jsonContent.slice(1, jsonContent.length-1);
 }
 
 window.onload = () => {

@@ -1,25 +1,15 @@
-import { baseThemeSetting } from './base-theme.ts'
 import { closest, isLight } from 'npm:color-2-name';
 
-// .mtk1  = dots and semis
 // .mtk2                ???
-// .mtk3  = Operators
 // .mtk4                ???
 // .mtk5                ???
-// .mtk6  = keywords
-// .mtk7  = Numbers
 // .mtk8                ???
 // .mtk9                ???
-// .mtk10 = Variable
 // .mtk11               ???
-// .mtk12 = Strings
 // .mtk13               ???
 // .mtk14               ???
 // .mtk15               ???
-// .mtk16 = method
 // .mtk17               ???
-// .mtk18 = if/else/return
-// .mtk19 = declerations
 // .mtk20               ???
 // .mtk21               ???
 
@@ -45,9 +35,14 @@ const themeElements = [
 export const themeEditor = (colors: any[]) => {
     return `
         <div class="mb-2">
-            <button class="btn btn-secondary mx-auto d-block my-2 w-50 mx-auto" onclick="shuffleColors()">
-                Randomize Colors
-            </button>
+            <div class="d-flex w-75 mx-auto">
+                <button class="btn btn-secondary d-block my-2 w-100 me-2" onclick="shuffleColors()">
+                    Randomize Colors
+                </button>
+                <button class="btn btn-secondary d-block w-50 my-2" onclick="exportTheme()" data-toggle="modal" data-target="#themeModal">
+                    Export Theme
+                </button>
+            </div>
             ${
                 themeElements.map((ele, i) => (`
                     <div class="dropdown">

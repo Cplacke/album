@@ -17,9 +17,8 @@ export const getProducts = async (search: string) => {
                     ${artist.name} 
                     <span> - ${album.releaseDate}</span>
                 </p>
-                <p>$19.99</p>
                 <a id="${album.id}" href="/colorize/${album.id}" class="button">
-                    <span>View</span>
+                    <span>Build Custom Theme</span>
                 </a>
             </div>
         </div>
