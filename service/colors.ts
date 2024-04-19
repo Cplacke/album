@@ -1,6 +1,6 @@
 import getColors from 'npm:get-image-colors';
 import { SimplifiedAlbum } from "https://github.com/hum/spotify/raw/main/mod.ts";
-import { closest, isDark } from 'npm:color-2-name';
+import { closest, isDark } from 'npm:color-2-name@1.3.0';
 import { themeEditor } from '../src/theme/theme.ts'
 
 export const getColorPalletHtml = async (album: SimplifiedAlbum) => {
